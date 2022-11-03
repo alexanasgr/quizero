@@ -14,8 +14,15 @@ body {
 
 }
 
-h1,h2,h3,h4,h5,h6,p,span{
-  color:#ffffff;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: #ffffff;
 }
 
 .App {
@@ -69,14 +76,15 @@ p {
   color: #ffffff;
 }
 
-.gamescreen{
-  width:100%;
+.gamescreen {
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: space-evenly;
   align-items: center;
 }
+
 /* Game Screen */
 .score {
   display: flex;
@@ -88,30 +96,45 @@ p {
   width: 200px;
   height: 50px;
   background-color: #004756;
-  color:#ffffff;
-  position:absolute;
-  top:0;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
 }
 
 .score h1 {
   font-weight: 300;
 }
-#score{
-  color:#0093b0;
+
+#score {
+  color: #0093b0;
   font-weight: 500;
 }
 
-.answers{
-  width: 100%;
-
+.answers {
+  width: auto;
+  height: auto;
+  display: grid;
   grid-template-columns: 2fr 2fr;
+ 
 }
 
-
-
-.answer{
+.answer {
   width: 400px;
-  height: 50px;
-  background-color: red;
+  height: 80px;
+  background-color: #002c35;
+  opacity: 0.5;
+  border-radius: 0.4rem;
+  color:#ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin:0.5rem;
 }
 
+.answer:hover{
+  cursor: pointer;
+  text-transform: inherit;
+  font-weight: 600;
+  opacity: 1;
+}
