@@ -8,8 +8,10 @@ export const GameScreen = () => {
             </div>
             <div className='question'>
                 <h1>THE QUESTION NAME</h1>
-                <span>Error Message</span>
+                
             </div>
+
+            <span className="alert alert-error">Error Message</span>
 
             <div className="answers">
                 <div className='answer'>ANSWER 1</div>
