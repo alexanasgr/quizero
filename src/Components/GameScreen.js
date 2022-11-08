@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const GameScreen = () => {
+export default function GameScreen(){
     return (
         <div className='gamescreen'>
             <div className='score'>
@@ -22,3 +22,4 @@ export const GameScreen = () => {
         </div>
     )
 }
+

@@ -1,19 +1,23 @@
-import './App.css';
+import "./App.css";
+import React, { useState, useContext } from "react";
 
-// import screens
-import { HomeScreen } from './Components/HomeScreen';
-import { GameScreen } from './Components/GameScreen';
+// screens
+import HomeScreen from "./Components/HomeScreen";
+import GameScreen from "./Components/GameScreen";
+
+// the game context from helpers
+import { GameContext } from "./Helpers/Context";
 
 function App() {
+  const [gameState, setGameState] = useState("intro");
+
   return (
-
     <div className="App">
-
-      <GameScreen />
-
-
+      <GameContext.Provider value={{ gameState, setGameState }}>
+        {gameState === "intro" && <HomeScreen />}
+        {gameState === "game" && <GameScreen />}
+      </GameContext.Provider>
     </div>
-
   );
 }
 
