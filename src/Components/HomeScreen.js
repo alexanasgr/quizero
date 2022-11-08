@@ -1,13 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GameContext } from "../Helpers/Context";
 
 export default function HomeScreen() {
-  const { gameState, setGameState } = useContext(GameContext);
+  const { userName, setUserName, gameState, setGameState } =
+    useContext(GameContext);
+  const [score] = useState(0);
+
   return (
     <div className="homescreen">
       <div className="appname">
-        <h1>Quizeroo</h1>
-        <p>Version 1.0 written with React.js</p>
+        <h1>QUIZERO</h1>
+      </div>
+
+      <div className="forms">
+        <h2>
+          👋 Hi <span id="username">{userName}</span>
+        </h2>
+
+        <div className="nameForm">
+          <p>Insert your name:</p>
+          <input
+            type="text"
+            onKeyUp={(e) => {
+              setUserName(e.target.value);
+            }}
+          ></input>
+        </div>
       </div>
 
       <div className="buttons">
@@ -16,9 +34,15 @@ export default function HomeScreen() {
             setGameState("game");
           }}
         >
-          👍 START
+          👍 Let's play
         </button>
-        <button>🌐 ABOUT</button>
+        <button
+          onClick={() => {
+            setGameState("about");
+          }}
+        >
+          🌐 ABOUT
+        </button>
       </div>
     </div>
   );
