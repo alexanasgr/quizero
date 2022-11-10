@@ -12,6 +12,9 @@ This is a mini quizz game based on React.js for Developers.
 2. Open project with your favorite code editor and install dependecies:
 `npm install` for NPM or `yarn install` for Yarn
 
+3. Run application 
+4. `npm start` OR `yarn start`
+
 ### 🐳 With Docker
 
 1. Pull the image from my Docker Hub with this command in terminal
