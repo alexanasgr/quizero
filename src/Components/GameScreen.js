@@ -3,22 +3,18 @@ import { Questions } from "../Helpers/Questions";
 import { GameContext } from "../Helpers/Context";
 
 export default function GameScreen() {
-  const { gameState, setGameState } = useContext(GameContext);
+  const { score, setScore, setGameState } = useContext(GameContext);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selOption, setSelOption] = useState("");
-  const [score, setScore] = useState(0);
 
   // check for correct answer
   const submitAnswer = () => {
-    if (Questions[currentQuestion].correct === selOption) {
-
-        setScore(score+1)
-        setCurrentQuestion(currentQuestion + 1)
-      
+    if (selOption === Questions[currentQuestion].correct) {
+      setScore(score + Questions[currentQuestion].points);
+      setCurrentQuestion(currentQuestion + 1);
     }
-
   };
-
+  // finalize the game
   const finishGame = () => {
     setGameState("finish");
   };
@@ -27,7 +23,7 @@ export default function GameScreen() {
     <div className="gamescreen">
       <div className="score">
         <h1>
-          Score: <span id="score">{score}</span>
+          Your Score: <span id="score">{score}</span>
         </h1>
       </div>
       <div className="question">
@@ -69,25 +65,28 @@ export default function GameScreen() {
         </div>
       </div>
 
-      {currentQuestion === Questions.length - 1 ? (
-        <div
-          className="submitanswer"
-          onClick={() => {
-            finishGame();
-          }}
-        >
-          Finish Game
-        </div>
-      ) : (
-        <div
-          className="submitanswer"
-          onClick={() => {
-            submitAnswer();
-          }}
-        >
-          NEXT QUESTION
-        </div>
-      )}
+      <div className="gamebuttons">
+        <div className="">EXIT</div>
+        {currentQuestion === Questions.length - 1 ? (
+          <div
+            className="submitanswer"
+            onClick={() => {
+              finishGame();
+            }}
+          >
+            Finish Game
+          </div>
+        ) : (
+          <div
+            className="submitanswer"
+            onClick={() => {
+              submitAnswer();
+            }}
+          >
+            NEXT QUESTION
+          </div>
+        )}
+      </div>
     </div>
   );
 }

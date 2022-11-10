@@ -12,12 +12,17 @@ export default function GameOver() {
   };
   return (
     <>
-      <div className="nicejob">🏆 Great Job, {userName}</div>
-      <h1>Score is {score}</h1>
+      <div className="nicejob">
+        🏆 Great Job, <span>{userName}</span>
+      </div>
+      <h1>Your score is {score}</h1>
 
       <div class="buttons">
-        <button className="restart" onClick={restart}>
-          🚀 Restart Quiz
+        <button className="btn restart" onClick={restart}>
+          🚀 Restart
+        </button>
+        <button className="btn restart" onClick={restart}>
+          📢 Share
         </button>
       </div>
     </>

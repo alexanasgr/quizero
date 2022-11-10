@@ -1,14 +1,18 @@
-import React, { useContext, useState } from "react";
+import React,{ useContext, useEffect, useState } from "react";
 import { GameContext } from "../Helpers/Context";
 
+import logo from '../icons/logo.png';
+
+
 export default function HomeScreen() {
-  const { userName, setUserName, gameState, setGameState } =
+  const { userName, score, setScore, setUserName, gameState, setGameState } =
     useContext(GameContext);
-  const [score] = useState(0);
 
   return (
     <div className="homescreen">
+    
       <div className="appname">
+        <img src={logo} className="logo" alt="logo"/>
         <h1>QUIZERO</h1>
       </div>
 
@@ -18,7 +22,7 @@ export default function HomeScreen() {
         </h2>
 
         <div className="nameForm">
-          <p>Insert your name:</p>
+          <p>Whats your name ?</p>
           <input
             type="text"
             onKeyUp={(e) => {
@@ -34,15 +38,16 @@ export default function HomeScreen() {
             setGameState("game");
           }}
         >
-          👍 Let's play
+          🚀 Let's play
         </button>
         <button
           onClick={() => {
-            setGameState("about");
+            setGameState("credits");
           }}
         >
-          🌐 ABOUT
+          ❤️ Credits
         </button>
+
       </div>
     </div>
   );
