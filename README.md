@@ -15,7 +15,7 @@ This is a mini quizz game based on React.js for Developers.
 ### 🐳 With Docker
 
 1. Pull the image from my Docker Hub with this command in terminal
-`docker pull alexanastasgr/quizero:1.0` 
+`docker pull alexanastasgr/quizero:1.1` 
 2.  `docker run quizero`
 
 ### ⚡ Need Help ?
