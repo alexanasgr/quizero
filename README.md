@@ -10,10 +10,10 @@ This is a mini quizz game based on React.js for Developers.
 `git clone https://github.com/alexanastasgr/quizero.git`
 
 2. Open project with your favorite code editor and install dependecies:
-`npm install` for NPM or `yarn install` for Yarn
+`npx install` for NPM or `yarn install` for Yarn
 
 3. Run application 
-4. `npm start` OR `yarn start`
+4. `npx start` OR `yarn start`
 
 ### 🐳 With Docker
 
